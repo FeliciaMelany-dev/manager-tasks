@@ -1,7 +1,7 @@
 {
   "name": "api-task",
   "version": "1.0.0",
-  "description": "",
+  "description": "Uma API desenvolvida com foco em **boas práticas, modularização e organização de código**, seguindo o padrão **MVC** e utilizando o **Express**, **Sequelize** e banco de dados **SQLITE** no Node.js.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "date-fns": "^4.1.0",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",

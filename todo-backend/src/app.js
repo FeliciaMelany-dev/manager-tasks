@@ -1,10 +1,13 @@
 import express from 'express';
 import task from './routes/routeTask.js';
-import { logger } from './middlwares/logger.js';
+import { logger } from './middlewares/logger.js';
+import cors from cors;
+
 
 const app = express();
 
 app.use(logger);
+app.use(cors());
 app.use(express.json());
 app.use('/task', task);
 

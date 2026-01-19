@@ -1,5 +1,5 @@
 import database from '../database/models/index.js'
-import { BadRequestError, NotFoundError, ValidationError } from "../middlwares/error.js";
+import { BadRequestError, NotFoundError, ValidationError } from "../middlewares/error.js";
 
 class TaskService {
     async getAll() {
