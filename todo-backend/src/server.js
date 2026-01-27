@@ -3,12 +3,12 @@ import dotenv from "dotenv";
 
 dotenv.config()
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) =>(
-    res.status(400).send("Servidor funcionando")
+    res.status(200).send("Servidor funcionando")
 ))
 
 app.listen(PORT, () =>{
-    console.log(`Servidor rodando!`)
+    console.log(`Servidor up!, rodando na porta ${PORT}`)
 });

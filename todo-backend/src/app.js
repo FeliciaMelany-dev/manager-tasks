@@ -5,12 +5,18 @@ import swaggerUi from "swagger-ui-express";
 import swaggerSpec from './docs/swagger.js';
 import cors from "cors";
 import corsOptions from './config/config/cors.js';
+import dotenv from "dotenv";
 
+dotenv.config()
 
 const app = express();
 
+const isProduction = process.env.NODE_ENV === "production";
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+if(!isProduction){
+  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+}
+
 app.use(logger);
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -28,8 +34,6 @@ app.use((req, res, next) => {
   }
   next();
 });
-
-
 
 
 
