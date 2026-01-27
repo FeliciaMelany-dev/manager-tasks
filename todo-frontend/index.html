@@ -1,0 +1,62 @@
+<Doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Minhas Tarefas</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Nova tarefa</h2>
+
+        <form id="task-form">
+          <label for="title">Título</label>
+          <input 
+            name="titulo"
+            type="text"
+            id="title"
+            placeholder="Título da tarefa"
+            required
+          />
+
+          <label for="description">Descrição</label>
+          <textarea
+            name="description"
+            id="description"
+            placeholder="Descrição"
+            required
+          ></textarea>
+
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="todo" selected>A fazer</option>
+                <option value="pending">Pendente</option>
+                <option value="done">Concluido</option>
+            </select>
+
+          <button type="submit">Adicionar</button>
+        </form>
+      </section>
+
+      <section>
+        <h2 class="lista">Lista de tarefas</h2>
+
+        <div id="task-list"></div>
+
+      </section>
+    </main>
+
+    <footer>
+      <p>Projeto To-Do List</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
