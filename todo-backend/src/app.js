@@ -4,7 +4,7 @@ import { logger } from './middlewares/logger.js';
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from './docs/swagger.js';
 import cors from "cors";
-import corsOptions from './database/config/cors.js';
+import corsOptions from './config/config/cors.js';
 
 
 const app = express();

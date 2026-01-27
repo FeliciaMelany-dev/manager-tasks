@@ -116,7 +116,7 @@ task.post('/', validate.validateTaskPost, (req, res, next) => controller.taskCre
  *              content:
  *                  application/json:
  *                      schema:
- *                          $ref: '#/components/schema/Task'
+ *                          $ref: '#/components/schemas/Task'
  *          404:
  *              description: Tarefa não encontrada
  */

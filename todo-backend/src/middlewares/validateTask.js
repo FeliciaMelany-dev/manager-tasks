@@ -66,7 +66,7 @@ class validate {
             });
         }
 
-        const validStatus = ["pendente", "a_fazer", "concluida"];
+        const validStatus = ["pendente", "a_fazer", "concluido"];
 
         if (!validStatus.includes(status)) {
             return res.status(400).json({
