@@ -24,7 +24,7 @@ const controller = new TaskController();
  *                                  $ref: '#/components/schemas/Task'                        
  */
 
-task.get('/', (req, res) => controller.getAll(req, res));
+task.get('/', (req, res, next) => controller.getAll(req, res, next));
 
 /**
  * @openapi

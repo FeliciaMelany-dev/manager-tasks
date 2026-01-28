@@ -12,14 +12,11 @@ class TaskService {
             }
             return tasks;
 
-        } catch (err) {
-            if (err instanceof NotFoundError || err instanceof ValidationError) {
-                throw err;
+        } catch (error) {
+            if (error instanceof NotFoundError || error instanceof ValidationError) {
+                throw error;
             }
         }
-
-        console.error('Erro ao buscar todas as tarefas:', err);
-        throw new BadRequestError('Error ao acessar o banco de dados')
     };
 
 

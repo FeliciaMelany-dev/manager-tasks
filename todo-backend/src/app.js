@@ -20,21 +20,22 @@ if(!isProduction){
 app.use(logger);
 app.use(cors(corsOptions));
 app.use(express.json());
-app.use('/task', task);
 
 
-app.use((err, req, res, next) => {
-    const status = err.statusCode || 500;
-    res.status(status).json({ error: err.message });
-});
-
-app.use((req, res, next) => {
-  if (['PUT', 'PATCH', 'DELETE', 'GET'].includes(req.method) && /^\/task\/?$/.test(req.path)) {
+function validateId(req, res, next) {
+  if (!req.params.id) {
     return res.status(400).json({ error: "O ID é obrigatório na URL." });
   }
   next();
-});
+}
 
+app.use('/task/:id', validateId); 
+app.use('/task', task);
+
+app.use((error, req, res, next) => {
+    const status = error.statusCode || 500;
+    res.status(status).json({ error: error.message });
+});
 
 
 export default app;

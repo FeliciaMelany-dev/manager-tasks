@@ -11,8 +11,8 @@ class TaskController {
             const tasks = await this.taskService.getAll()
             res.status(200).json(tasks);
 
-        } catch (err) {
-            next(err);
+        } catch (error) {
+            next(error);
         }
     }
 
@@ -24,8 +24,8 @@ class TaskController {
 
             res.status(200).json(task)
 
-        } catch (err) {
-            next(err);
+        } catch (error) {
+            next(error);
         }
     }
 
@@ -37,8 +37,8 @@ class TaskController {
 
             res.status(201).json(newTask);
 
-        } catch (err) {
-            next(err)
+        } catch (error) {
+            next(error)
         }
     }
 
@@ -51,8 +51,8 @@ class TaskController {
             
             res.status(200).json(UpdatedTask);
 
-        } catch (err) {
-            next(err)
+        } catch (error) {
+            next(error)
         }
     }
 
@@ -62,8 +62,8 @@ class TaskController {
         try {
             const updateTask = await this.taskService.updateOne(id, data);
             res.status(200).json(updateTask);
-        } catch (err) {
-            next(err)
+        } catch (error) {
+            next(error)
         }
     }
 
@@ -73,8 +73,8 @@ class TaskController {
             await this.taskService.taskDelete(id);
             res.status(200).send('Deletado com sucesso')
 
-        } catch (err) {
-            next(err)
+        } catch (error) {
+            next(error)
         }
     }
 
