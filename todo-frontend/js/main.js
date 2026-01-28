@@ -11,7 +11,7 @@ const filtroButtons = document.querySelectorAll(".filtro-nav button");
 
 function atualizarContador() {
   const pendenteCount = tasks.filter((t) => t.status === "pendente").length;
-  const concluidaCount = tasks.filter((t) => t.status === "concluida").length;
+  const concluidaCount = tasks.filter((t) => t.status === "concluido").length;
   const totalCount = tasks.length;
 
   const spans = document.querySelectorAll(".contador span");
@@ -29,7 +29,7 @@ filtroButtons.forEach((btn) => {
     if (filter === "todas") {
       filterTasks = tasks;
     } else {
-      filterTasks = tasks.filter((tasks) => tasks.status === filter);
+      filterTasks = tasks.filter((task) => task.status === filter);
     }
     renderTasks(filterTasks);
   });
