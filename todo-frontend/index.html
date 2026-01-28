@@ -11,7 +11,7 @@
     <header>
       <div class="logo-titulo">
         <img
-          src="./img/logo-removebg-preview.png"
+          src="./assets/img/logo-removebg-preview.png"
           alt="Logo Eagle Task Manager"
           width="100"
         />
@@ -34,7 +34,7 @@
           <input
             type="text"
             name="title"
-            id=""
+            id="title"
             placeholder="Título da tarefa"
           />
 
@@ -55,11 +55,7 @@
           <button data-filter="concluida">Completas</button>
         </nav>
 
-        <div id="task-container">
-            <article class="task-pendente"> </article>
-            <article class="task-concluida"></article>
-            <article class="task-nao-iniciada"></article>
-        </div>
+        <div id="task-container"></div>
       </section>
     </main>
 
@@ -76,5 +72,7 @@
         </div>
       </div>
     </footer>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>
