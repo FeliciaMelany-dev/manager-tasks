@@ -1,62 +1,80 @@
-<Doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-do List</title>
+    <title>Manager-Task</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>Minhas Tarefas</h1>
+      <div class="logo-titulo">
+        <img
+          src="./img/logo-removebg-preview.png"
+          alt="Logo Eagle Task Manager"
+          width="100"
+        />
+        <h1 class="titulo">TaskManager</h1>
+      </div>
+
+      <div class="contador">
+        <span>Pendente: <strong>0</strong></span>
+        <span>Completa: <strong>0</strong></span>
+        <span class="total">Total: <strong>0</strong></span>
+      </div>
     </header>
 
-    <main>
-      <section>
-        <h2>Nova tarefa</h2>
+    <main class="conteudo">
+      <section class="bloco-um">
+        <h2 class="titulo-adicionar">Nova tarefa</h2>
 
-        <form id="task-form">
-          <label for="title">Título</label>
-          <input 
-            name="titulo"
+        <form>
+          <label for="título"> Título</label>
+          <input
             type="text"
-            id="title"
+            name="title"
+            id=""
             placeholder="Título da tarefa"
-            required
           />
 
-          <label for="description">Descrição</label>
-          <textarea
-            name="description"
-            id="description"
-            placeholder="Descrição"
-            required
-          ></textarea>
+          <label>Descrição</label>
+          <textarea id="description" placeholder="Descrição da Tarefa"></textarea>
 
-            <label for="status">Status</label>
-            <select name="status" id="status">
-                <option value="todo" selected>A fazer</option>
-                <option value="pending">Pendente</option>
-                <option value="done">Concluido</option>
-            </select>
+          <div class="btn-adicionar">
+            <button type="submit">Adicionar Tarefa</button>
+          </div>
 
-          <button type="submit">Adicionar</button>
         </form>
       </section>
 
-      <section>
-        <h2 class="lista">Lista de tarefas</h2>
+      <section class="bloco-um-dois">
+        <nav class="filtro-nav">
+          <button data-filter="todas">Todas tarefas</button>
+          <button data-filter="pendente">Pendentes</button>
+          <button data-filter="concluida">Completas</button>
+        </nav>
 
-        <div id="task-list"></div>
-
+        <div id="task-container">
+            <article class="task-pendente"> </article>
+            <article class="task-concluida"></article>
+            <article class="task-nao-iniciada"></article>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <p>Projeto To-Do List</p>
+    <footer class="main-footer">
+      <div class="footer-conteudo">
+        <p>© 2026 TaskManager</p>
+        <div class="social-links">
+          <a href="https://github.com/FeliciaMelany-dev" target="_blank"
+            >Github</a
+          >
+          <a href="https://linkedin.com/in/felíciamelany" target="_blank"
+            >Likedin</a
+          >
+        </div>
+      </div>
     </footer>
-
-    <script src="js/script.js"></script>
   </body>
 </html>
